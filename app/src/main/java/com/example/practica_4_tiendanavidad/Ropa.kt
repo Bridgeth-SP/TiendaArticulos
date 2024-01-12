@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 fun Ropa() {
     LazyColumn {
         item {
+            // Imagen Encabezado
             Image(
                 painter = painterResource(id = R.drawable.ferragamo_1),
                 contentDescription = null,
@@ -29,6 +30,7 @@ fun Ropa() {
             )
         }
 
+        //Filas de productos de Ropa
         items(1) { rowIndex ->
             Row {
                 CeldaRopa(imageRes = R.drawable.ferragamo_bolso1, nombre = "Bolso", descripcion = "FERRAGAMO", precio = "1.254,99 €")
@@ -50,11 +52,11 @@ fun Ropa() {
 }
 
 @Composable
+// Representar uan celda individual de cada producto de la sección Ropa
 fun CeldaRopa(imageRes: Int, nombre: String, descripcion: String, precio: String) {
-    // Contenido de la celda
     Column {
 
-        // Imagen
+        // Imagen del producto Ropa
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = null,
@@ -64,7 +66,7 @@ fun CeldaRopa(imageRes: Int, nombre: String, descripcion: String, precio: String
                 .padding(start = 40.dp)
         )
 
-        // Nombre
+        // Nombre del producto Ropa
         Text(
             text = nombre,
             modifier = Modifier.padding(top = 8.dp, start = 40.dp),
@@ -73,7 +75,7 @@ fun CeldaRopa(imageRes: Int, nombre: String, descripcion: String, precio: String
 
         )
 
-        // Descripción
+        // Descripción del producto Ropa
         Text(
             text = descripcion,
             modifier = Modifier.padding(top = 4.dp, start = 40.dp),
@@ -81,7 +83,7 @@ fun CeldaRopa(imageRes: Int, nombre: String, descripcion: String, precio: String
             color = Color.DarkGray
         )
 
-        // Precio
+        // Precio del producto Ropa
         Text(
             text = precio,
             modifier = Modifier.padding(top = 4.dp, start = 40.dp),

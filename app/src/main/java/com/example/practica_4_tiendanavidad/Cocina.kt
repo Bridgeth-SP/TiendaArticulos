@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Cocina() {
     LazyColumn {
-        // Imagen del principio
         item {
                 Text(
                     text = "Cocina",
@@ -34,7 +33,7 @@ fun Cocina() {
                 )
 
             Column {
-                // Imagen 3 en la parte inferior
+                // Imagen en la parte inferior
                 Image(
                     painter = painterResource(id = R.drawable.cocina2),
                     contentDescription = null,
@@ -46,7 +45,7 @@ fun Cocina() {
                 Spacer(modifier = Modifier.height(1.dp))
             }
         }
-        // Fila 1
+        // Producto 1
         item {
             CocinaItem(
                 imageRes = R.drawable.organizador,
@@ -55,7 +54,7 @@ fun Cocina() {
                 precio = "12.99 €"
             )
         }
-        // Fila 2
+        // Producto 2
         item {
             CocinaItem(
                 imageRes = R.drawable.forgon,
@@ -64,7 +63,7 @@ fun Cocina() {
                 precio = "99.00 €"
             )
         }
-        // Fila 3
+        // Producto 3
         item {
             CocinaItem(
                 imageRes = R.drawable.horno,
@@ -73,7 +72,7 @@ fun Cocina() {
                 precio = "69.99 €"
             )
         }
-        // Fila 4
+        // Producto 4
         item {
             CocinaItem(
                 imageRes = R.drawable.botellero,
@@ -82,7 +81,7 @@ fun Cocina() {
                 precio = "108.99 €"
             )
         }
-        // Fila 5
+        // Producto 5
         item {
             CocinaItem(
                 imageRes = R.drawable.grifo,
@@ -94,6 +93,7 @@ fun Cocina() {
     }
 }
 
+// Función para representar un elemento individual de cocina
 @Composable
 fun CocinaItem(
     imageRes: Int,
@@ -114,11 +114,18 @@ fun CocinaItem(
                 .height(250.dp)
                 .padding(3.dp)
         )
+
         Spacer(modifier = Modifier.height(16.dp))
+
+        // Nombre del producto
         Text(text = nombre, fontWeight = FontWeight.Bold, fontSize = 18.sp)
         Spacer(modifier = Modifier.height(8.dp))
+
+        // Descripción del producto
         Text(text = descripcion, fontSize = 14.sp)
         Spacer(modifier = Modifier.height(8.dp))
+
+        // Precio del producto
         Text(text = "Precio: $precio", fontWeight = FontWeight.Bold, fontSize = 16.sp)
     }
 }

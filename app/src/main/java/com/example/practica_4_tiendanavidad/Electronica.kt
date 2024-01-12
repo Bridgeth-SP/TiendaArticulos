@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+// Clase de datos para representar un producto electrónico
 data class Producto(
     val nombre: String,
     val descripcion: String,
@@ -28,7 +29,7 @@ data class Producto(
 @Preview
 @Composable
 fun Electronica() {
-
+    // Encabezado de "Electrónica"
     Text(
         text = "Electrónica",
         fontSize = 28.sp,
@@ -38,6 +39,7 @@ fun Electronica() {
             .padding(bottom = 10.dp, top = 7.dp, start = 1.dp)
     )
 
+    // Lista de productos electrónicos
     val productos = listOf(
 
         Producto(
@@ -71,6 +73,8 @@ fun Electronica() {
         "579,00 €"
         )
     )
+
+    // Muestra cada producto electrónico en una lista vertical
     LazyColumn {
         items(productos) { producto ->
             ProductoItem(producto = producto)
@@ -86,6 +90,8 @@ fun ProductoItem(producto: Producto) {
             .padding(15.dp)
             .fillMaxWidth()
     ) {
+
+        // Imagen del producto electrónico
         Image(
             painter = painterResource(id = producto.imagen),
             contentDescription = null,
@@ -95,16 +101,16 @@ fun ProductoItem(producto: Producto) {
                 .clip(shape = MaterialTheme.shapes.medium),
             contentScale = ContentScale.Crop
         )
-
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Nombre del producto
         Text(
             text = producto.nombre,
             fontWeight = FontWeight.Bold
         )
-
         Spacer(modifier = Modifier.height(8.dp))
 
+        // Descripción del producto
         Text(
             text = producto.descripcion,
             color = Color.Gray

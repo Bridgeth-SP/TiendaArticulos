@@ -18,8 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.practica_4_tiendanavidad.ui.theme.Practica4_TiendaNavidadTheme
 
+// Clase de datos para representar un juguete
 data class Juguete(val nombre: String, val precio: String, val imagen: Int)
 
+// Lista de juguetes
 val listaJuguetes = listOf(
     Juguete("Barbie", "75,99 €", R.drawable.barbie),
     Juguete("Nerf", "29,99 €", R.drawable.nerf),
@@ -32,7 +34,7 @@ val listaJuguetes = listOf(
 @Composable
 fun Juguetes() {
     LazyColumn {
-
+        // Imagen ofertas en la parte superior
         item {
             Image(
                 painter = painterResource(id = R.drawable.puzzles),
@@ -43,6 +45,7 @@ fun Juguetes() {
             )
         }
 
+        // Mostrar cada juguete de la lista uno por uno
         items(listaJuguetes) { juguete ->
             JuguetesItem(juguete = juguete)
         }
@@ -56,7 +59,7 @@ fun JuguetesItem(juguete: Juguete) {
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-        //Imagen juguetes
+        //Imagen del juguete
         Image(
             painter = painterResource(id = juguete.imagen),
             contentDescription = null,
@@ -65,7 +68,7 @@ fun JuguetesItem(juguete: Juguete) {
                 .clip(MaterialTheme.shapes.small)
         )
 
-        // Descripción y precio
+        // Descripción y precio del juguete
         Column(
             modifier = Modifier
                 .padding(start = 16.dp)

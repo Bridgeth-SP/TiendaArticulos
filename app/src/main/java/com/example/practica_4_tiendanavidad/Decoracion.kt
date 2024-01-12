@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun Decoracion() {
     LazyColumn {
-        // Imagen del principio
         item {
             Text(
                 text = "DECORACIÓN",
@@ -34,7 +33,7 @@ fun Decoracion() {
             )
             Column {
                 Row {
-                    // Imagen 1 a la derecha en la parte superior
+                    // Imagen 1 a la derecha
                     Image(
                         painter = painterResource(id = R.drawable.deco1),
                         contentDescription = null,
@@ -44,7 +43,7 @@ fun Decoracion() {
                             .weight(1f)
                     )
 
-                    // Imagen 2 a la izquierda en la parte superior
+                    // Imagen 2 a la izquierda
                     Image(
                         painter = painterResource(id = R.drawable.deco2),
                         contentDescription = null,
@@ -69,7 +68,7 @@ fun Decoracion() {
         }
 
 
-        // Fila 1
+        // Producto 1
         item {
             CocinaItem(
                 imageRes = R.drawable.jarron,
@@ -78,7 +77,7 @@ fun Decoracion() {
                 precio = "8,99 €"
             )
         }
-        // Fila 2
+        // Producto 2
         item {
             CocinaItem(
                 imageRes = R.drawable.alfombra,
@@ -87,7 +86,7 @@ fun Decoracion() {
                 precio = "24.99 €"
             )
         }
-        // Fila 3
+        // Producto 3
         item {
             CocinaItem(
                 imageRes = R.drawable.pizarra,
@@ -96,7 +95,7 @@ fun Decoracion() {
                 precio = "20.00 €"
             )
         }
-        // Fila 4
+        // Producto 4
         item {
             CocinaItem(
                 imageRes = R.drawable.espejo,
@@ -108,6 +107,7 @@ fun Decoracion() {
     }
 }
 
+// Función para representar un elemento individual de decoración
 @Composable
 fun DecoracionItem(
     imageRes: Int,
@@ -120,6 +120,7 @@ fun DecoracionItem(
             .fillMaxWidth()
             .padding(16.dp)
     ) {
+        // Imagen del producto
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = null,
@@ -129,10 +130,16 @@ fun DecoracionItem(
                 .padding(3.dp)
         )
         Spacer(modifier = Modifier.height(16.dp))
+
+        // Nombre del producto
         Text(text = nombre, fontWeight = FontWeight.Bold, fontSize = 18.sp)
         Spacer(modifier = Modifier.height(8.dp))
+
+        // Descripción del producto
         Text(text = descripcion, fontSize = 14.sp)
         Spacer(modifier = Modifier.height(8.dp))
+
+        // Precio del producto
         Text(text = "Precio: $precio", fontWeight = FontWeight.Bold, fontSize = 16.sp)
     }
 }
